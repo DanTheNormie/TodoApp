@@ -25,6 +25,10 @@
         <item name="backgroundColor">@color/black</item>
     </style>
 
+    <style name="BottomSheetDisableDragStyle" parent="Theme.MaterialComponents.DayNight.BottomSheetDialog">
+        <item name="behavior_draggable">false</item>
+    </style>
+
     <style name="Theme.TodoApp.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
