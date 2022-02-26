@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="500dp"
+        android:paddingBottom="300dp"
         tools:context=".ui.fragments.main_fragments.EditFragment">
 
         <TextView
@@ -72,10 +72,10 @@
             app:layout_constraintTop_toBottomOf="@+id/subtasks_rv">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:imeOptions="actionDone"
                 android:id="@+id/subtasks_et"
                 android:layout_width="match_parent"
-                android:maxLines="1"
-                android:imeOptions="actionDone"
+                android:inputType="text"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_baseline_add_circle_outline_24"
                 android:drawablePadding="10dp"
