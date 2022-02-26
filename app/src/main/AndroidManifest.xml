@@ -13,6 +13,7 @@
             android:name=".ui.activities.MainActivity"
             android:exported="true"
             android:label="@string/title_activity_main"
+            android:windowSoftInputMode="adjustResize"
             android:theme="@style/Theme.TodoApp.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
