@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.main_fragments.EditFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="500dp"
+        tools:context=".ui.fragments.main_fragments.EditFragment">
+
+        <TextView
+            android:id="@+id/edit_title_tv"
+            style="@style/titles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD NEW TASK"
+            android:layout_margin="16dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/task_title_til"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Task Title"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_title_tv">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/task_title_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/subtasks_rv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/task_title_til"
+            app:layout_constraintStart_toStartOf="@+id/task_title_til"
+            app:layout_constraintTop_toBottomOf="@+id/task_title_til"
+            tools:itemCount="0" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/subtask_title_til"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+
+            android:hint="add sub task"
+            app:layout_constraintEnd_toEndOf="@+id/subtasks_rv"
+            app:layout_constraintStart_toStartOf="@+id/subtasks_rv"
+            app:layout_constraintTop_toBottomOf="@+id/subtasks_rv">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/subtasks_et"
+                android:layout_width="match_parent"
+                android:maxLines="1"
+                android:imeOptions="actionDone"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_add_circle_outline_24"
+                android:drawablePadding="10dp"
+                 />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lists_dropdown_menu_til"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:hint="Choose a list"
+            app:layout_constraintEnd_toEndOf="@+id/task_title_til"
+            app:layout_constraintStart_toStartOf="@+id/task_title_til"
+            app:layout_constraintTop_toBottomOf="@+id/subtask_title_til">
+
+            <AutoCompleteTextView
+                android:id="@+id/lists_dropdown_menu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/due_til"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginVertical="16dp"
+            android:hint="Due Date and Time"
+            app:endIconDrawable="@drawable/ic_baseline_calendar_month_24"
+            app:endIconMode="custom"
+            app:layout_constraintEnd_toEndOf="@+id/lists_dropdown_menu_til"
+            app:layout_constraintStart_toStartOf="@+id/lists_dropdown_menu_til"
+            app:layout_constraintTop_toBottomOf="@+id/lists_dropdown_menu_til">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/due_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:editable="false"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reminder_til"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:hint="Reminder"
+            app:endIconDrawable="@drawable/ic_baseline_alarm_24"
+            app:endIconMode="custom"
+            app:layout_constraintEnd_toEndOf="@+id/lists_dropdown_menu_til"
+            app:layout_constraintStart_toStartOf="@+id/lists_dropdown_menu_til"
+            app:layout_constraintTop_toBottomOf="@+id/due_til">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reminder_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:editable="false"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/repeat_til"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:hint="Repeat"
+            app:endIconDrawable="@drawable/ic_baseline_repeat_24"
+            app:endIconMode="custom"
+            app:layout_constraintEnd_toEndOf="@+id/lists_dropdown_menu_til"
+            app:layout_constraintStart_toStartOf="@+id/lists_dropdown_menu_til"
+            app:layout_constraintTop_toBottomOf="@+id/reminder_til">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/repeat_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:editable="false"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/add_del_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button"
+            android:text="Save"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repeat_til" />
+
+        <ImageButton
+            android:id="@+id/del_btn"
+            android:layout_margin="24dp"
+
+            android:background="#00ffffff"
+            android:scaleY="1.3"
+            android:scaleX="1.3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_delete_forever_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
